@@ -30,7 +30,7 @@ export interface PasswordPair {
     password: string;
 }
 
-export interface BulkInfo {
+export interface BulkUserInfo {
     ids: string[];
 }
 
@@ -43,7 +43,7 @@ export interface ResetPassword {
     new_password: string;
 }
 
-export interface Request {
+export interface UserInfo {
     departments?: string[] | null;
     /**
      * 姓名
@@ -82,4 +82,8 @@ export interface Post {
     resources: string[];
     time: DateRange;
     title: string;
+}
+
+export interface BulkPosts{
+    posts: string;
 }

@@ -76,3 +76,5 @@ export interface Post {
      */
     time: number;
 }
+
+export type BulkPosts = Map<string, Post>;
