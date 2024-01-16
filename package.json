@@ -1,0 +1,25 @@
+{
+  "name": "sms4-net-front",
+  "version": "0.1.0",
+  "description": "sms4-backend net lib for frontend",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subitlab-buf/sms4-net-front.git"
+  },
+  "keywords": [
+    "sms4-backend",
+    "genshine",
+    "lib",
+    "network"
+  ],
+  "author": "C191239[zhushunzhong2025@i.pkuschool.edu.cn]",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/subitlab-buf/sms4-net-front/issues"
+  },
+  "homepage": "https://github.com/subitlab-buf/sms4-net-front#readme"
+}
