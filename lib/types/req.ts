@@ -1,8 +1,11 @@
-// Types in requests.
+/**
+* Types in requests.
+* Use `Req` prefix.
+*/
 
-import { DateRange, Password, PhoneClass, Priority, TagElement } from "./common";
+import { CmnDateRange, CmnPassword, CmnPhoneClass, CmnPriority, CmnTagElement } from "./common";
 
-export interface Register {
+export interface ReqRegister {
     /**
      * 验证码
      */
@@ -13,28 +16,28 @@ export interface Register {
      */
     name: string;
     password: string;
-    phone: PhoneClass | number;
+    phone: CmnPhoneClass | number;
     /**
      * 学工号
      */
     school_id: string;
-    tags?: TagElement[];
+    tags?: CmnTagElement[];
 }
 
-export interface Email {
+export interface ReqEmail {
     email: string;
 }
 
-export interface PasswordPair {
+export interface ReqPasswordPair {
     email: string;
     password: string;
 }
 
-export interface BulkUserInfo {
+export interface ReqBulkUserInfo {
     ids: string[];
 }
 
-export interface ResetPassword {
+export interface ReqResetPassword {
     /**
      * 验证码
      */
@@ -43,14 +46,14 @@ export interface ResetPassword {
     new_password: string;
 }
 
-export interface UserInfo {
+export interface ReqUserInfo {
     departments?: string[] | null;
     /**
      * 姓名
      */
     name?: null | string;
-    password?: null | Password;
-    phone?: PhoneClass | number | null;
+    password?: null | CmnPassword;
+    phone?: CmnPhoneClass | number | null;
     /**
      * 学工号
      */
@@ -61,7 +64,7 @@ export interface UserInfo {
     token_expire_duration?: number | null;
 }
 
-export interface SetPerms {
+export interface ReqSetPerms {
     permissions: string[];
     /**
      * 目标用户id
@@ -69,21 +72,21 @@ export interface SetPerms {
     target_account: string;
 }
 
-export interface Post {
+export interface ReqPost {
     /**
      * 是否连续
      */
     grouped: boolean;
     notes: string;
-    priority: Priority;
+    priority: CmnPriority;
     /**
      * 资源id列表
      */
     resources: string[];
-    time: DateRange;
+    time: CmnDateRange;
     title: string;
 }
 
-export interface BulkPosts{
+export interface ReqBulkPosts{
     posts: string;
 }

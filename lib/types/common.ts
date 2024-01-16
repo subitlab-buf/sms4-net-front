@@ -1,6 +1,9 @@
-// Common types
+/**
+ * Common types.
+ * Use `Cmn` prefix.
+ */
 
-export interface PhoneClass {
+export interface CmnPhoneClass {
     number: number;
     /**
      * 区域号码
@@ -11,22 +14,22 @@ export interface PhoneClass {
 /**
  * Tag
  */
-export interface TagElement {
-    entry: TagEntry;
+export interface CmnTagElement {
+    entry: CmnTagEntry;
     tag: number | string;
 }
 
 /**
  * TagEntry
  */
-export enum TagEntry {
+export enum CmnTagEntry {
     Academy = "Academy",
     Department = "Department",
     House = "House",
     Permission = "Permission",
 }
 
-export interface Password {
+export interface CmnPassword {
     new: string;
     old: string;
 }
@@ -34,7 +37,7 @@ export interface Password {
 /**
  * Priority
  */
-export enum Priority {
+export enum CmnPriority {
     Block = "Block",
     High = "High",
     Low = "Low",
@@ -44,7 +47,7 @@ export enum Priority {
 /**
  * DateRange
  */
-export interface DateRange {
+export interface CmnDateRange {
     end: Date;
     start: Date;
 }
@@ -52,13 +55,13 @@ export interface DateRange {
 /**
  * Status
  */
-export enum Status {
+export enum CmnStatus {
     Approved = "Approved",
     Pending = "Pending",
     Rejected = "Rejected",
 }
 
-export enum Type {
+export enum CmnPostType {
     Full = "Full",
     Simple = "Simple",
 }
@@ -66,13 +69,13 @@ export enum Type {
 /**
  * State
  */
-export interface State {
+export interface CmnState {
     message: string;
     /**
      * 操作人
      */
     operator: string;
-    status: Status;
+    status: CmnStatus;
     /**
      * timestamp
      */

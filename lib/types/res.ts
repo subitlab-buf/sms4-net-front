@@ -1,8 +1,11 @@
-// Types in responses.
+/**
+* Types in responses.
+* Use `Res` prefix.
+*/
 
-import { DateRange, PhoneClass, Priority, State, Status, TagElement, Type } from "./common";
+import { CmnDateRange, CmnPhoneClass, CmnPriority, CmnState, CmnStatus, CmnTagElement, CmnPostType } from "./common";
 
-export interface Login {
+export interface ResLogin {
     /**
      * 过期时间，timestamp
      */
@@ -17,19 +20,19 @@ export interface Login {
 /**
  * AccountInfo
  */
-export interface Account {
+export interface ResAccount {
     departments?: string[];
     email: string;
     /**
      * 用户姓名
      */
     name: string;
-    phone?: PhoneClass | number;
+    phone?: CmnPhoneClass | number;
     /**
      * 学工号
      */
     school_id?: string;
-    tags?: TagElement[];
+    tags?: CmnTagElement[];
     /**
      * Token过期秒数
      */
@@ -37,44 +40,44 @@ export interface Account {
     type: "Full" | "Owned" | "Simple";
 }
 
-export type BulkAccount = Map<string, Account>;
+export type ResBulkAccount = Map<string, ResAccount>;
 
-export interface PostId {
+export interface ResPostId {
     id: string;
 }
 
-export interface PostIds {
+export interface ResPostIds {
     posts: string[];
 }
 
 /**
  * PostInfo
  */
-export interface Response {
+export interface ResPost {
     creator?: string;
     grouped: boolean;
-    priority: Priority;
+    priority: CmnPriority;
     resources: string[];
-    states?: State[];
-    time?: DateRange;
+    states?: CmnState[];
+    time?: CmnDateRange;
     title: string;
-    type: Type;
+    type: CmnPostType;
 }
 
 /**
  * State
  */
-export interface Post {
+export interface ResPostState {
     message: string;
     /**
      * 操作人
      */
     operator: string;
-    status: Status;
+    status: CmnStatus;
     /**
      * timestamp
      */
     time: number;
 }
 
-export type BulkPosts = Map<string, Post>;
+export type ResBulkPosts = Map<string, ResPost>;
