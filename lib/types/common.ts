@@ -4,22 +4,22 @@
  */
 
 export namespace Cmn {
-    export interface PhoneClass {
+    export type PhoneClass = {
         number: number;
         /**
          * 区域号码
          */
         region: number;
-    }
+    } | number;
 
     /**
      * Tag
      * 
      * @todo Specify type restraints.
      */
-    export interface TagElement {
-        entry: TagEntry;
-        tag: number | string;
+    export type TagElement = {
+        entry: TagEntry.Academy;
+        tag: ;
     }
 
     /**
