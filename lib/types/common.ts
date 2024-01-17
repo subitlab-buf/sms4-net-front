@@ -1,83 +1,87 @@
 /**
  * Common types.
- * Use `Cmn` prefix.
+ * Use `Cmn` namespace.
  */
 
-export interface CmnPhoneClass {
-    number: number;
+export namespace Cmn {
+    export interface PhoneClass {
+        number: number;
+        /**
+         * 区域号码
+         */
+        region: number;
+    }
+
     /**
-     * 区域号码
+     * Tag
+     * 
+     * @todo Specify type restraints.
      */
-    region: number;
-}
+    export interface TagElement {
+        entry: TagEntry;
+        tag: number | string;
+    }
 
-/**
- * Tag
- */
-export interface CmnTagElement {
-    entry: CmnTagEntry;
-    tag: number | string;
-}
-
-/**
- * TagEntry
- */
-export enum CmnTagEntry {
-    Academy = "Academy",
-    Department = "Department",
-    House = "House",
-    Permission = "Permission",
-}
-
-export interface CmnPassword {
-    new: string;
-    old: string;
-}
-
-/**
- * Priority
- */
-export enum CmnPriority {
-    Block = "Block",
-    High = "High",
-    Low = "Low",
-    Normal = "Normal",
-}
-
-/**
- * DateRange
- */
-export interface CmnDateRange {
-    end: Date;
-    start: Date;
-}
-
-/**
- * Status
- */
-export enum CmnStatus {
-    Approved = "Approved",
-    Pending = "Pending",
-    Rejected = "Rejected",
-}
-
-export enum CmnPostType {
-    Full = "Full",
-    Simple = "Simple",
-}
-
-/**
- * State
- */
-export interface CmnState {
-    message: string;
     /**
-     * 操作人
+     * TagEntry
      */
-    operator: string;
-    status: CmnStatus;
+    export enum TagEntry {
+        Academy = "Academy",
+        Department = "Department",
+        House = "House",
+        Permission = "Permission",
+    }
+
+    export interface Password {
+        new: string;
+        old: string;
+    }
+
     /**
-     * timestamp
+     * Priority
      */
-    time: number;
+    export enum Priority {
+        Block = "Block",
+        High = "High",
+        Low = "Low",
+        Normal = "Normal",
+    }
+
+    /**
+     * DateRange
+     */
+    export interface DateRange {
+        end: Date;
+        start: Date;
+    }
+
+    /**
+     * Status
+     */
+    export enum Status {
+        Approved = "Approved",
+        Pending = "Pending",
+        Rejected = "Rejected",
+    }
+
+    export enum PostType {
+        Full = "Full",
+        Simple = "Simple",
+    }
+
+    /**
+     * State
+     */
+    export interface State {
+        message: string;
+        /**
+         * 操作人
+         */
+        operator: string;
+        status: Status;
+        /**
+         * timestamp
+         */
+        time: number;
+    }
 }

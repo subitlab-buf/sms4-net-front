@@ -1,9 +1,9 @@
 /**
 * Types in requests.
-* Use `Req` prefix.
+* Use `Req` namespace.
 */
 
-import { CmnDateRange, CmnPassword, CmnPhoneClass, CmnPriority, CmnStatus, CmnTagElement } from "./common";
+import { Cmn } from "./common";
 
 export namespace Req {
     export interface Register {
@@ -17,12 +17,12 @@ export namespace Req {
          */
         name: string;
         password: string;
-        phone: CmnPhoneClass | number;
+        phone: Cmn.PhoneClass | number;
         /**
          * 学工号
          */
         school_id: string;
-        tags?: CmnTagElement[];
+        tags?: Cmn.TagElement[];
     }
 
     export interface Email {
@@ -53,8 +53,8 @@ export namespace Req {
          * 姓名
          */
         name?: null | string;
-        password?: null | CmnPassword;
-        phone?: CmnPhoneClass | number | null;
+        password?: null | Cmn.Password;
+        phone?: Cmn.PhoneClass | number | null;
         /**
          * 学工号
          */
@@ -79,12 +79,12 @@ export namespace Req {
          */
         grouped: boolean;
         notes: string;
-        priority: CmnPriority;
+        priority: Cmn.Priority;
         /**
          * 资源id列表
          */
         resources: string[];
-        time: CmnDateRange;
+        time: Cmn.DateRange;
         title: string;
     }
 
@@ -102,7 +102,7 @@ export namespace Req {
          */
         notes?: null | string;
         resources?: string[] | null;
-        time?: null | CmnDateRange;
+        time?: null | Cmn.DateRange;
         title?: null | string;
     }
 
@@ -111,7 +111,7 @@ export namespace Req {
          * 附加信息
          */
         message?: null | string;
-        status: CmnStatus;
+        status: Cmn.Status;
     }
 
     export type BulkRemove = {

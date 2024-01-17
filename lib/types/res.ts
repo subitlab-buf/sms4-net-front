@@ -1,9 +1,9 @@
 /**
 * Types in responses.
-* Use `Res` prefix.
+* Use `Res` namespace.
 */
 
-import { CmnDateRange, CmnPhoneClass, CmnPriority, CmnState, CmnStatus, CmnTagElement, CmnPostType } from "./common";
+import { Cmn } from "./common";
 
 export namespace Res {
     export interface Login {
@@ -28,12 +28,12 @@ export namespace Res {
          * 用户姓名
          */
         name: string;
-        phone?: CmnPhoneClass | number;
+        phone?: Cmn.PhoneClass | number;
         /**
          * 学工号
          */
         school_id?: string;
-        tags?: CmnTagElement[];
+        tags?: Cmn.TagElement[];
         /**
          * Token过期秒数
          */
@@ -57,12 +57,12 @@ export namespace Res {
     export interface Post {
         creator?: string;
         grouped: boolean;
-        priority: CmnPriority;
+        priority: Cmn.Priority;
         resources: string[];
-        states?: CmnState[];
-        time?: CmnDateRange;
+        states?: Cmn.State[];
+        time?: Cmn.DateRange;
         title: string;
-        type: CmnPostType;
+        type: Cmn.PostType;
     }
 
     /**
@@ -74,7 +74,7 @@ export namespace Res {
          * 操作人
          */
         operator: string;
-        status: CmnStatus;
+        status: Cmn.Status;
         /**
          * timestamp
          */
