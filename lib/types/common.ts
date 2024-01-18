@@ -121,4 +121,11 @@ export namespace Cmn {
         UploadResource = "UploadResource",
         Maintain = "Maintain",
     }
+
+    /**
+     * General error struct.
+     */
+    export interface Error {
+        error: string;
+    }
 }
