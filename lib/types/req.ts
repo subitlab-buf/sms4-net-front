@@ -35,6 +35,9 @@ export namespace Req {
     }
 
     export interface BulkUserInfo {
+        /**
+         * Desired user ids.
+         */
         ids: string[];
     }
 
@@ -78,6 +81,9 @@ export namespace Req {
          * 是否连续
          */
         grouped: boolean;
+        /**
+         * Notes for reviewers.
+         */
         notes: string;
         priority: Cmn.Priority;
         /**
@@ -89,10 +95,13 @@ export namespace Req {
     }
 
     export interface BulkPosts {
-        posts: string;
+        /**
+         * Desired post ids.
+         */
+        posts: string[];
     }
 
-    export interface Modify {
+    export interface ModifyPost {
         /**
          * 是否连续
          */
@@ -101,6 +110,9 @@ export namespace Req {
          * 备注，附加备注
          */
         notes?: null | string;
+        /**
+         * Thing to show.
+         */
         resources?: string[] | null;
         time?: null | Cmn.DateRange;
         title?: null | string;
@@ -108,7 +120,7 @@ export namespace Req {
 
     export interface Review {
         /**
-         * 附加信息
+         * Reviewer's opinion.
          */
         message?: null | string;
         status: Cmn.Status;

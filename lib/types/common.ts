@@ -6,6 +6,10 @@
 import { Util } from "../util";
 
 export namespace Cmn {
+    /**
+     * A phone number.\
+     * Assume `+86` if no region provided.
+     */
     export type PhoneClass = {
         number: number;
         /**
@@ -15,9 +19,7 @@ export namespace Cmn {
     } | number;
 
     /**
-     * Tag
-     * 
-     * @todo Specify type restraints.
+     * A user tag.
      */
     export type TagElement = {
         entry: TagEntry.Academy;
@@ -55,7 +57,8 @@ export namespace Cmn {
     }
 
     /**
-     * Priority
+     * Priority of a post.\
+     * Affects the frequency on the screen.
      */
     export enum Priority {
         Block = "Block",
@@ -65,7 +68,7 @@ export namespace Cmn {
     }
 
     /**
-     * DateRange
+     * Date range to show.
      */
     export interface DateRange {
         end: Date;
@@ -73,7 +76,7 @@ export namespace Cmn {
     }
 
     /**
-     * Status
+     * Review status.
      */
     export enum Status {
         Approved = "Approved",
@@ -87,7 +90,7 @@ export namespace Cmn {
     }
 
     /**
-     * State
+     * Review status info struct.
      */
     export interface State {
         message: string;
@@ -102,6 +105,9 @@ export namespace Cmn {
         time: number;
     }
 
+    /**
+     * User permission group.
+     */
     export enum Permission {
         Post = "Post",
         GetPubPost = "GetPubPost",
