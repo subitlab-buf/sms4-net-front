@@ -3,6 +3,8 @@
  * Use `Cmn` namespace.
  */
 
+import { Util } from "../util";
+
 export namespace Cmn {
     export type PhoneClass = {
         number: number;
@@ -19,8 +21,23 @@ export namespace Cmn {
      */
     export type TagElement = {
         entry: TagEntry.Academy;
-        tag: ;
-    }
+        /**
+         * Represents 6 Academies.
+         */
+        tag: Util.Range<1, 7>;
+    } | {
+        entry: TagEntry.Department;
+        tag: string;
+    } | {
+        entry: TagEntry.House;
+        /**
+         * Represents house 1-9.
+         */
+        tag: Util.Range<1, 10>;
+    } | {
+        entry: TagEntry.Permission;
+        tag: Permission;
+    };
 
     /**
      * TagEntry
@@ -83,5 +100,19 @@ export namespace Cmn {
          * timestamp
          */
         time: number;
+    }
+
+    export enum Permission {
+        Post = "Post",
+        GetPubPost = "GetPubPost",
+        ReviewPost = "ReviewPost",
+        RemovePost = "RemovePost",
+        SetPermission = "SetPermission",
+        ViewFullAccount = "ViewFullAccount",
+        ViewSimpleAccount = "ViewSimpleAccount",
+        ManageNotifications = "ManageNotification",
+        GetPubNotifications = "GetPubNotification",
+        UploadResource = "UploadResource",
+        Maintain = "Maintain",
     }
 }
